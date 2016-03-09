@@ -4,6 +4,7 @@ fieldIds =
   email: 29506
   score: 29507
   comments: 29508
+  cohort: 29519
 
 storePrefix = "#{getUrlParameter('cohort')}-nps-"
 
@@ -64,6 +65,7 @@ validateNps = (x) ->
 
 responseVals = ->
   {
+    cohort: getUrlParameter('cohort') || ''
     email: getUrlParameter('email') || ''
     score: validateNps(getUrlParameter('score')) || ''
     comments: $('#comments').val()
