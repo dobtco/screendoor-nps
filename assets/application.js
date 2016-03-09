@@ -221,13 +221,12 @@ var getUrlParameter = function getUrlParameter(sParam) {
     };
   };
 
-  persistedFromStore = store.get(storePrefix + 'responses');
-
-  if (!(persistedFromStore && (translatedVals() === persistedFromStore))) {
-    persistToScreendoor();
-  }
-
-  if (!(responseVals().email && responseVals().score)) {
+  if (responseVals().email && responseVals().score) {
+    persistedFromStore = store.get(storePrefix + 'responses');
+    if (!(persistedFromStore && (translatedVals() === persistedFromStore))) {
+      persistToScreendoor();
+    }
+  } else {
     showError('Sorry, there was an error loading the page.');
     $('form').hide();
   }
