@@ -5,10 +5,26 @@ fieldIds =
   score: 29507
   comments: 29508
 
-showError = (message) ->
-  alert message
+storePrefix = "#{getUrlParameter('cohort')}-nps-"
 
-# showSuccess = ->
+showError = (message) ->
+  $('.form_error').text(message).show()
+
+showSuccess = ->
+  $('.form_error').hide()
+
+  $('form').velocity
+    opacity: [0, 1],
+    translateX: [-50, 0]
+  ,
+    display: 'none'
+    complete: ->
+      $('.success').velocity(
+        opacity: [1, 0]
+        translateY: [30, 0]
+      ,
+        display: 'block'
+      )
 
 translatedVals = ->
   vals = responseVals()
@@ -20,31 +36,25 @@ translatedVals = ->
   newVals
 
 persistToScreendoor = ->
-  vals = responseVals()
+  responses = translatedVals()
 
-  if vals.email && vals.score
-    responses = translatedVals()
-
-    $.ajax
-      url: 'https://screendoor.dobt.co/api/form_renderer/save'
-      type: 'post'
-      dataType: 'json'
-      data:
-        v: 0
-        response_id: store.get('responseId')
-        submit: true
-        project_id: projectId
-        raw_responses: responses
-      success: (data) ->
-        store.set 'persistedResponses', responses
-        store.set 'responseId', data.response_id
-      error: ->
-        store.unset 'persistedResponses'
-        store.unset 'responseId'
-        showError('Error saving your response.')
-
-  else
-    showError('Some info is missing.')
+  $.ajax
+    url: 'https://screendoor.dobt.co/api/form_renderer/save'
+    type: 'post'
+    dataType: 'json'
+    data:
+      v: 0
+      response_id: store.get(storePrefix + 'id')
+      submit: true
+      project_id: projectId
+      raw_responses: responses
+    success: (data) ->
+      store.set storePrefix + 'responses', responses
+      store.set storePrefix + 'id', data.response_id
+    error: ->
+      store.unset storePrefix + 'responses'
+      store.unset storePrefix + 'id'
+      showError('Error saving your response.')
 
 validateNps = (x) ->
   xInt = parseInt(x, 10)
@@ -60,10 +70,18 @@ responseVals = ->
   }
 
 # Save immediately unless already saved
-unless store.get('persistedResponses') && (translatedVals() == store.get('persistedResponses'))
+persistedFromStore = store.get(storePrefix + 'responses')
+unless persistedFromStore && (translatedVals() == persistedFromStore)
   persistToScreendoor()
+
+# If the user doesn't load the URL correctly, don't even show the form
+unless responseVals().email && responseVals().score
+  showError('Sorry, there was an error loading the page.')
+  $('form').hide()
+
+$('.js_score').text(responseVals().score)
 
 $('form').on 'submit', (e) ->
   e.preventDefault()
+  showSuccess()
   persistToScreendoor()
-  $(@).hide()

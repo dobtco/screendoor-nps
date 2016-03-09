@@ -1,6 +1,44 @@
 @import 'vendor/assets/stylesheets/dvl/core';
 
+body {
+  background: #2e3732;
+  color: $white;
+  text-align: center;
+}
+
 .container {
-  max-width: 40rem;
+  max-width: 30rem;
   margin: 2rem auto 0;
+}
+
+.header {
+  padding-top: $lineHeight * 2;
+}
+
+.screendoor_logo_inner,
+.screendoor_logo_text {
+  fill: #fff;
+}
+.screendoor_logo_outer {
+  fill: rgba($white,0.15);
+}
+
+label {
+  color: rgba($white, 0.9);
+  font-size: 1.25rem;
+  margin-bottom: $rhythm * 2;
+  display: block;
+}
+
+textarea {
+  margin-bottom: $rhythm;
+}
+
+.success {
+  @include font_smoothing;
+  font-size: 1.5rem;
+
+  a {
+    color: $white;
+  }
 }
