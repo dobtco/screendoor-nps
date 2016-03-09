@@ -1,0 +1,21 @@
+title: Your feedback for Screendoor
+
+sass:
+  style: :compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - browserslist
+  - node_modules
+  - Gruntfile.coffee
+  - circle.yml
+  - package.json
+  - Rakefile
+
+assets:
+  sources:
+    - _assets/fonts
+    - _assets/javascripts
+    - _assets/stylesheets
