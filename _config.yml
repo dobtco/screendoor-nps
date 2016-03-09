@@ -13,6 +13,9 @@ exclude:
   - circle.yml
   - package.json
   - Rakefile
+  - CNAME
+  - project_template.yml
+  - script
 
 assets:
   sources:
