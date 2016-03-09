@@ -4,6 +4,7 @@ sass:
   style: :compressed
 
 exclude:
+  - vendor
   - Gemfile
   - Gemfile.lock
   - README.md
