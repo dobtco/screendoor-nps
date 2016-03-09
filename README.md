@@ -20,4 +20,4 @@ If you intend to collect a follow-up response from the *same* user, make sure to
 
 ## Check the data in Screendoor
 
-https://screendoor.dobt.co/dobt/screendoor-nps
+https://screendoor.dobt.co/dobt/screendoor-nps/admin/responses
