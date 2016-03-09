@@ -1,0 +1,48 @@
+---
+project_params:
+  after_response_email_method: 3
+  after_response_page_method: 1
+  after_response_page_html: ''
+  identification_level: 1
+  automatically_approve_edits: true
+  automatically_release_responses_for_edits: true
+  contact_email: adam@dobt.co
+  description:
+  enable_qa: false
+  enable_signatures: false
+  hide_responder_names: false
+  iframe_skip_preview: true
+  payment_amount_cents:
+  require_payment: false
+  statuses_visible_to_responders: false
+  summary:
+  name: Screendoor NPS
+  language_base: submission
+  allow_multiple_responses: false
+response_fields:
+- label: Email
+  field_options:
+    size: medium
+  required: false
+  blind: false
+  admin_only: false
+  type: ResponseFieldText
+- label: Score
+  field_options:
+    size: medium
+  required: false
+  blind: false
+  admin_only: false
+  type: ResponseFieldText
+- label: Comments
+  field_options:
+    size: medium
+  required: false
+  blind: false
+  admin_only: false
+  type: ResponseFieldParagraph
+rating_fields: []
+labels: []
+statuses:
+- name: Open
+- name: Archived
