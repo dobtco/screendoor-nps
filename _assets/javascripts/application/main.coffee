@@ -71,13 +71,15 @@ responseVals = ->
     comments: $('#comments').val()
   }
 
-# Save immediately unless already saved
-persistedFromStore = store.get(storePrefix + 'responses')
-unless persistedFromStore && (translatedVals() == persistedFromStore)
-  persistToScreendoor()
+
+if responseVals().email && responseVals().score
+  # Save immediately unless already saved
+  persistedFromStore = store.get(storePrefix + 'responses')
+  unless persistedFromStore && (translatedVals() == persistedFromStore)
+    persistToScreendoor()
 
 # If the user doesn't load the URL correctly, don't even show the form
-unless responseVals().email && responseVals().score
+else
   showError('Sorry, there was an error loading the page.')
   $('form').hide()
 
