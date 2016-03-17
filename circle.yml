@@ -1,3 +1,7 @@
+machine:
+  environment:
+    JEKYLL_ENV: production
+
 test:
   override:
     - script/cibuild

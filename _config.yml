@@ -1,8 +1,5 @@
 title: Your feedback for Screendoor
 
-sass:
-  style: :compressed
-
 exclude:
   - vendor
   - Gemfile
