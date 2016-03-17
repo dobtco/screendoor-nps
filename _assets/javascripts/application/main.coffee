@@ -67,12 +67,11 @@ responseVals = ->
   {
     cohort: getUrlParameter('cohort') || ''
     email: getUrlParameter('email') || ''
-    score: validateNps(getUrlParameter('score')) || ''
+    score: validateNps(getUrlParameter('score'))
     comments: $('#comments').val()
   }
 
-
-if responseVals().email && responseVals().score
+if responseVals().email && responseVals().score?
   # Save immediately unless already saved
   persistedFromStore = store.get(storePrefix + 'responses')
   unless persistedFromStore && (translatedVals() == persistedFromStore)
