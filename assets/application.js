@@ -207,7 +207,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
   validateNps = function(x) {
     var xInt;
     xInt = parseInt(x, 10);
-    if (xInt >= 1 && xInt <= 10) {
+    if (xInt >= 0 && xInt <= 10) {
       return xInt;
     }
   };
