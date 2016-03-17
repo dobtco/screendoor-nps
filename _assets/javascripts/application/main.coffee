@@ -60,7 +60,7 @@ persistToScreendoor = ->
 validateNps = (x) ->
   xInt = parseInt(x, 10)
 
-  if xInt >= 1 && xInt <= 10
+  if xInt >= 0 && xInt <= 10
     xInt
 
 responseVals = ->
