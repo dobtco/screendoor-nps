@@ -3,10 +3,9 @@ project_params:
   after_response_email_method: 3
   after_response_page_method: 1
   after_response_page_html: ''
-  identification_level: 1
+  anonymous: true
   automatically_approve_edits: true
   automatically_release_responses_for_edits: true
-  contact_email: adam@dobt.co
   description:
   enable_qa: false
   enable_signatures: false
@@ -17,32 +16,95 @@ project_params:
   statuses_visible_to_responders: false
   summary:
   name: Screendoor NPS
-  language_base: submission
-  allow_multiple_responses: false
+  language_base_key:
+  only_allow_one_response: true
+  organization_permission_level: 1
+  organization_permissions: []
+message_presets: []
+project_specifics:
+- label:
+  value:
+rating_fields: []
+labels:
+- id: 3386
+  name: Passive
+  color: fcf4c3
+- id: 3385
+  name: Promoter
+  color: dbf4bf
+statuses:
+- id: 8281
+  name: Open
+- id: 8282
+  name: Archived
+project_teams: []
 response_fields:
-- label: Email
+- id: 29519
+  label: Cohort
   field_options:
     size: medium
   required: false
   blind: false
   admin_only: false
   type: ResponseFieldText
-- label: Score
+- id: 29506
+  label: Email
   field_options:
     size: medium
   required: false
   blind: false
   admin_only: false
   type: ResponseFieldText
-- label: Comments
+- id: 29507
+  label: Score
+  field_options:
+    size: medium
+  required: false
+  blind: false
+  admin_only: false
+  type: ResponseFieldText
+- id: 29508
+  label: Comments
   field_options:
     size: medium
   required: false
   blind: false
   admin_only: false
   type: ResponseFieldParagraph
-rating_fields: []
-labels: []
-statuses:
-- name: Open
-- name: Archived
+shortcuts:
+- trigger: contain
+  trigger_data:
+    response_field_id: '29507'
+    response_method: contains
+    response_value: '10'
+  action: add_label
+  action_data:
+    label_ids:
+    - '3385'
+- trigger: contain
+  trigger_data:
+    response_field_id: '29507'
+    response_method: contains
+    response_value: '9'
+  action: add_label
+  action_data:
+    label_ids:
+    - '3385'
+- trigger: contain
+  trigger_data:
+    response_field_id: '29507'
+    response_method: contains
+    response_value: '8'
+  action: add_label
+  action_data:
+    label_ids:
+    - '3386'
+- trigger: contain
+  trigger_data:
+    response_field_id: '29507'
+    response_method: contains
+    response_value: '7'
+  action: add_label
+  action_data:
+    label_ids:
+    - '3386'
