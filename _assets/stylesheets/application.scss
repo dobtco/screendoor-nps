@@ -15,14 +15,6 @@ body {
   padding-top: $lineHeight * 2;
 }
 
-.screendoor_logo_inner,
-.screendoor_logo_text {
-  fill: #fff;
-}
-.screendoor_logo_outer {
-  fill: rgba($white,0.15);
-}
-
 label {
   color: rgba($white, 0.9);
   font-size: 1.25rem;
