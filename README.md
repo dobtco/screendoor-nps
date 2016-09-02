@@ -3,7 +3,7 @@ screendoor-nps
 
 We love the concept of [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) at DOBT. Even though we're not a government agency ourselves, we're always on the lookout for new opportunities to use [Screendoor](https://www.dobt.co/screendoor/) for ourselves. So when our Customer Success team mentioned that they were looking at different tools to conduct a Net Promoter Score (NPS) survey with our users, we immediately thought, "hey, we can build that with Screendoor!"
 
-This repo is a simple static site, generated with Jekyll, that hosts a small bit of HTML and JavaScript that makes collecting your NPS with Screendoor a piece of cake. The end result is a set of links that you can send in an email to your users, each with a value from 1-10. When a user clicks the link, their response will be saved to Screendoor immediately, and they will see a form to add more feedback:
+This repo is a simple static site, generated with Jekyll, that hosts a small bit of HTML and JavaScript that makes collecting your NPS with Screendoor a piece of cake. The end result is a set of links that you can send in an email to your users, each with a value from 0-10. When a user clicks the link, their response will be saved to Screendoor immediately, and they will see a form to add more feedback:
 
 ![feedback form](https://dobt-captured.s3.amazonaws.com/ajb/Screen_Shot_2016-09-02_at_11.24.55_AM.png)
 
