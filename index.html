@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Your feedback for Screendoor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link type="text/css" rel="stylesheet" href="/assets/application-d3d3e0abcbc657fd0732cafea3919d5785f5ef322ef78709331d7e443a307978.css">
+  <link type="text/css" rel="stylesheet" href="/assets/application-4a447e073b35662603cc6d4eb4953035e2bf017af6ab1f1b251c3b0768b5aa7f.css">
   <script src="//use.typekit.net/ckb1dps.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
   <!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/shim.js"></script><![endif]-->
@@ -25,13 +25,15 @@
   </header>
 
   <div class='container'>
-    <form id="followup_form">
+    <div class='js_loading'>Loading...</div>
+    <div class='js_error' style='display:none'></div>
+
+    <form class='js_form' style='display:none'>
       <label for="comments">Tell us a bit more about why you chose <span class='js_score'></span>?</label>
       <textarea id="comments" placeholder="Anything else you'd like us to know"></textarea>
-      <button type="submit" class="button info block">Submit</button>
+      <button type="submit" class="button primary block">Submit</button>
     </form>
 
-    <div class='form_error' style='display:none'></div>
 
     <div class='success' style='display:none'>
       <p>Thanks, we really appreciate your feedback.</p>
@@ -42,7 +44,7 @@
   <!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/js/vendor/jquery.js"><\/script>')</script>
-  <script type="text/javascript" src="/assets/application-65bffe004700127d988ed502e62f64a90f76b507280690401405ac665dcff01c.js"></script>
+  <script type="text/javascript" src="/assets/application-cfeb01402a9f18a4966644c26aaafe7d3d1b64dd9c9b382b27079e6a580888c5.js"></script>
   <script type="text/javascript">
     !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
     
