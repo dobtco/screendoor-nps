@@ -16,7 +16,7 @@ When a user visits the page, their response will immediately be persisted. If th
 
 We also persist a token to localstorage, so if they visit the page again, it does not create duplicate records inside of Screendoor.
 
-If you intend to collect a follow-up response from the *same* user, make sure to change the `cohort` parameter in your links.
+If you intend to collect a later response from the *same* user, make sure to change the `cohort` parameter in your links.
 
 ## Check the data in Screendoor
 
