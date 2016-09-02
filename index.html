@@ -28,13 +28,15 @@
   </header>
 
   <div class='container'>
-    <form id="followup_form">
+    <div class='js_loading'>Loading...</div>
+    <div class='js_error' style='display:none'></div>
+
+    <form class='js_form' style='display:none'>
       <label for="comments">Tell us a bit more about why you chose <span class='js_score'></span>?</label>
       <textarea id="comments" placeholder="Anything else you'd like us to know"></textarea>
       <button type="submit" class="button primary block">Submit</button>
     </form>
 
-    <div class='form_error' style='display:none'></div>
 
     <div class='success' style='display:none'>
       <p>Thanks, we really appreciate your feedback.</p>

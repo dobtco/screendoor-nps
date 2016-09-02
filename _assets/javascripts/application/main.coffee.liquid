@@ -9,10 +9,10 @@ fieldIds =
 storePrefix = "#{getUrlParameter('cohort')}-nps-"
 
 showError = (message) ->
-  $('.form_error').text(message).show()
+  $('.js_error').text(message).show()
 
 showSuccess = ->
-  $('.form_error').hide()
+  $('.js_error').hide()
 
   $('form').velocity
     opacity: [0, 1],
@@ -71,7 +71,10 @@ responseVals = ->
     comments: $('#comments').val()
   }
 
+$('.js_loading').hide()
+
 if responseVals().email && responseVals().score?
+  $('.js_form').fadeIn(200)
   # Save immediately unless already saved
   persistedFromStore = store.get(storePrefix + 'responses')
   unless persistedFromStore && (translatedVals() == persistedFromStore)
