@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'autoprefixer-rails', github: 'ajb/autoprefixer-rails', branch: 'bundle-process'
+gem 'autoprefixer-rails'
 gem 'dvl-core', github: 'dobtco/dvl-core'
-gem 'html-proofer', '~>2.3.0'
+gem 'html-proofer'
 gem 'jekyll'
 gem 'jekyll-assets'
+gem 'rake'
 gem 'uglifier'

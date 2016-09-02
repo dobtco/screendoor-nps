@@ -19,3 +19,11 @@ assets:
     - _assets/fonts
     - _assets/javascripts
     - _assets/stylesheets
+
+screendoor_project_id: rg2W2SIZvZ7nL5fr
+
+screendoor_response_field_ids:
+  email: 29506
+  score: 29507
+  comments: 29508
+  cohort: 29519

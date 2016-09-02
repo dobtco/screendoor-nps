@@ -1,10 +1,10 @@
-projectId = "rg2W2SIZvZ7nL5fr"
+projectId = "{{ site.screendoor_project_id }}"
 
 fieldIds =
-  email: 29506
-  score: 29507
-  comments: 29508
-  cohort: 29519
+  email: {{ site.screendoor_response_field_ids.email }}
+  score: {{ site.screendoor_response_field_ids.score }}
+  comments: {{ site.screendoor_response_field_ids.comments }}
+  cohort: {{ site.screendoor_response_field_ids.cohort }}
 
 storePrefix = "#{getUrlParameter('cohort')}-nps-"
 
