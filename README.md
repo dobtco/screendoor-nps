@@ -45,7 +45,7 @@ Now, the fun part! Send an email with 10 links to each user that you wish to col
 
 Our email looks like this:
 
-![nps email](https://dobt-captured.s3.amazonaws.com/ajb/Screen_Shot_2016-09-02_at_11.43.56_AM.png)
+![nps email](http://dobt-misc.s3.amazonaws.com/Screen-Shot-2017-11-21-at-11.51.36-AM.png)
 
 (The "cohort" parameter is optional, but it allows you to collect NPS from the same user again in the future by changing the `cohort` value.)
 
